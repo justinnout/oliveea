@@ -1,1 +1,13 @@
-.idea
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+.idea/
+poetry.lock
+node_modules
+.env
