@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "olivia"
+version = "0.1.0"
+description = "A tool to help you craft conversations that care"
+authors = ["Justin Herrera <justin.kc.herrera@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+# Backend dependencies
+fastapi = "^0.94.1"
+uvicorn = "^0.21.0"
+openai = "^0.27.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+olivia = "olivia.api:app"
