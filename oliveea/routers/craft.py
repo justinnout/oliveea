@@ -3,6 +3,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from oliveea.core.crafter.crafter import Crafter
+from oliveea.dependencies import get_crafter
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ class CraftRequest(BaseModel):
 @router.post("/craft", tags=["craft"])
 async def craft(
     craft_request: CraftRequest,
-    crafter: Annotated[Crafter, Depends(Crafter)]
+    crafter: Crafter = Depends(get_crafter)
 ):
     crafter.craft(
         words=craft_request.words,

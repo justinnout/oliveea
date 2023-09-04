@@ -1,12 +1,5 @@
 from fastapi import FastAPI
-from functools import lru_cache
-from .config import Settings
-from .routers import healthcheck, craft
-
-
-@lru_cache()
-def get_settings():
-    return Settings()
+from oliveea.routers import healthcheck, craft
 
 
 app = FastAPI()

@@ -1,4 +1,6 @@
 
+from langchain import LLMChain
+
 class Crafter:
     """
     This module, Craft, is designed to enhance a string of words into another string of words in a given tone. 
@@ -13,11 +15,15 @@ class Crafter:
         craft  : Crafts the input string of words to match the desired tone.
     """
 
-    def __init__(self):
+    def __init__(self, llm, prompt):
         """
         The constructor for Crafter class.
         """
-        pass
+        self.llm_chain = LLMChain(
+            prompt=prompt,
+            llm=llm,
+        )
+            
 
     def craft(self, words: str, tone) -> str:
         """
@@ -30,5 +36,4 @@ class Crafter:
         Returns:
             None: The function is yet to be implemented.
         """
-        print(words, tone)
         pass
